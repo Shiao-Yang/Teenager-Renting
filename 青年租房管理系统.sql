@@ -99,8 +99,10 @@ create table Tickets
    wid                  int,
    uid                  int not null,
    hid                  int not null,
-   info                 text,
+   info                 text not null,
+   picture              longblob,
    status               int not null,
+   date                 date,
    comment              int,
    details              text,
    primary key (id)
@@ -131,7 +133,7 @@ create table Workers
    username             varchar(18) not null,
    password             varchar(18) not null,
    name                 varchar(30) not null,
-   tel                  varchar(11),
+   tel                  varchar(11) not null,
    photo                longblob,
    description          text,
    primary key (id)
