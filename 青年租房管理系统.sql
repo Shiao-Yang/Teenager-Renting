@@ -136,7 +136,7 @@ create table Workers
    tel                  varchar(11) not null,
    photo                longblob,
    description          text,
-   primary key (id)
+   primary key (id)     hi
 );
 
 alter table Carts add constraint FK_加入购物车 foreign key (uid)
