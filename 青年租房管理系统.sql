@@ -37,7 +37,8 @@ create table Admins
 /*==============================================================*/
 create table Carts
 (
-   id                   int not null,
+   id                   int primary key auto_increment,
+   hid                  int not null,
    uid                  int not null
 );
 
@@ -100,7 +101,7 @@ create table Tickets
    uid                  int not null,
    hid                  int not null,
    info                 text not null,
-   picture              longblob,
+   pictures             longblob,
    status               int not null,
    date                 date,
    comment              int,
@@ -142,7 +143,7 @@ create table Workers
 alter table Carts add constraint FK_加入购物车 foreign key (uid)
       references Users (id) on delete restrict on update restrict;
 
-alter table Carts add constraint FK_被加入购物车 foreign key (id)
+alter table Carts add constraint FK_被加入购物车 foreign key (hid)
       references Houses (id) on delete restrict on update restrict;
 
 alter table Complaints add constraint FK_投诉 foreign key (uid)
