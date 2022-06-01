@@ -85,6 +85,7 @@ create table Orders
    hid                  int not null,
    type                 bool,
    paid                 bool,
+   status               bool,
    order_time           datetime not null,
    duration             int not null,
    amount               float not null,
