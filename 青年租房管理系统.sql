@@ -103,8 +103,11 @@ create table Tickets
    hid                  int not null,
    info                 text,
    status               int not null,
+   date                 date,
+   materials_pic        longblob,
+   materials_text       text,
    comment              int,
-    pictures             longblob,
+   pictures             longblob,
    details              text,
    primary key (id)
 );
