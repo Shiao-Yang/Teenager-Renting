@@ -37,10 +37,10 @@ create table Admins
 /*==============================================================*/
 create table Carts
 (
-	id                  int auto_increment,
-   hid                   int not null,
+   id                   int auto_increment,
+   hid                  int not null,
    uid                  int not null,
-	primary key(id)
+   primary key(id)
 );
 
 /*==============================================================*/
@@ -117,6 +117,7 @@ create table Users
    id                   int not null auto_increment,
    username             varchar(18) not null,
    password             varchar(18) not null,
+   avatar               longblob,
    tel                  varchar(11),
    email                varchar(30),
    name                 varchar(30) not null,
