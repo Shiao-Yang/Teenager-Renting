@@ -25,7 +25,7 @@ drop table if exists Workers;
 /*==============================================================*/
 create table Admins
 (
-   id                   int not null,
+   id                   int not NULL auto_increment,
    name                 varchar(30),
    username             varchar(18) not null,
    password             varchar(18) not null,
@@ -37,9 +37,10 @@ create table Admins
 /*==============================================================*/
 create table Carts
 (
-   id                   int primary key auto_increment,
-   hid                  int not null,
-   uid                  int not null
+	id                  int auto_increment,
+   hid                   int not null,
+   uid                  int not null,
+	primary key(id)
 );
 
 /*==============================================================*/
@@ -47,7 +48,7 @@ create table Carts
 /*==============================================================*/
 create table Complaints
 (
-   id                   int not null,
+   id                   int not null auto_increment,
    uid                  int not null,
    tid                  int not null,
    contents             text not null,
@@ -61,7 +62,7 @@ create table Complaints
 /*==============================================================*/
 create table Houses
 (
-   id                   int not null,
+   id                   int not null auto_increment,
    short_price          float not null,
    long_price           float not null,
    location             varchar(254),
@@ -79,7 +80,7 @@ create table Houses
 /*==============================================================*/
 create table Orders
 (
-   id                   int not null,
+   id                   int not null auto_increment,
    uid                  int not null,
    hid                  int not null,
    type                 bool,
@@ -96,15 +97,14 @@ create table Orders
 /*==============================================================*/
 create table Tickets
 (
-   id                   int not null,
+   id                   int not null auto_increment,
    wid                  int,
    uid                  int not null,
    hid                  int not null,
-   info                 text not null,
-   pictures             longblob,
+   info                 text,
    status               int not null,
-   date                 date,
    comment              int,
+    pictures             longblob,
    details              text,
    primary key (id)
 );
@@ -114,7 +114,7 @@ create table Tickets
 /*==============================================================*/
 create table Users
 (
-   id                   int not null,
+   id                   int not null auto_increment,
    username             varchar(18) not null,
    password             varchar(18) not null,
    tel                  varchar(11),
@@ -130,11 +130,11 @@ create table Users
 /*==============================================================*/
 create table Workers
 (
-   id                   int not null,
+   id                   int not null auto_increment,
    username             varchar(18) not null,
    password             varchar(18) not null,
    name                 varchar(30) not null,
-   tel                  varchar(11) not null,
+   tel                  varchar(11),
    photo                longblob,
    description          text,
    primary key (id)
