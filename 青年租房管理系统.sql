@@ -87,6 +87,7 @@ create table Orders
    paid                 bool,
    status               int,
    order_time           datetime not null,
+   start_time           datetime not null,
    duration             int not null,
    amount               float not null,
    details              text,
