@@ -147,29 +147,29 @@ create table Workers
 );
 
 alter table Carts add constraint FK_加入购物车 foreign key (uid)
-      references Users (id) on delete restrict on update restrict;
+      references Users (id) on delete cascade on update cascade;
 
 alter table Carts add constraint FK_被加入购物车 foreign key (hid)
-      references Houses (id) on delete restrict on update restrict;
+      references Houses (id) on delete cascade on update cascade;
 
 alter table Complaints add constraint FK_投诉 foreign key (uid)
-      references Users (id) on delete restrict on update restrict;
+      references Users (id) on delete cascade on update cascade;
 
 alter table Complaints add constraint FK_被投诉 foreign key (tid)
-      references Tickets (id) on delete restrict on update restrict;
+      references Tickets (id) on delete cascade on update cascade;
 
 alter table Orders add constraint FK_下单 foreign key (uid)
-      references Users (id) on delete restrict on update restrict;
+      references Users (id) on delete cascade on update cascade;
 
 alter table Orders add constraint FK_参与订单 foreign key (hid)
-      references Houses (id) on delete restrict on update restrict;
+      references Houses (id) on delete cascade on update cascade;
 
 alter table Tickets add constraint FK_报修 foreign key (uid)
-      references Users (id) on delete restrict on update restrict;
+      references Users (id) on delete cascade on update cascade;
 
 alter table Tickets add constraint FK_接单 foreign key (wid)
-      references Workers (id) on delete restrict on update restrict;
+      references Workers (id) on delete set null on update set null;
 
 alter table Tickets add constraint FK_维修 foreign key (hid)
-      references Houses (id) on delete restrict on update restrict;
+      references Houses (id) on delete cascade on update cascade;
 
