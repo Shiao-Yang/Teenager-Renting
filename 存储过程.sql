@@ -1,8 +1,8 @@
-DROP TRIGGER if exist lock_house;
+DROP TRIGGER IF EXISTS lock_house;
 
-DROP EVENT if exist auto_update_paid;
+DROP EVENT IF EXISTS auto_update_paid;
 
-DROP PROCEDURE if exist update_paid;
+DROP PROCEDURE IF EXISTS update_paid;
 
 SET GLOBAL event_scheduler = ON;
 
